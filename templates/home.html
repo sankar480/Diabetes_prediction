@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f8;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        input[type="number"], input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .result {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #555;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Diabetes Prediction Form</h2>
+        <form method="POST" action="/home">
+            <label>Pregnancies:</label>
+            <input type="number" name="Pregnancies" step="any" required>
+
+            <label>Glucose:</label>
+            <input type="number" name="Glucose" step="any" required>
+
+            <label>Blood Pressure:</label>
+            <input type="number" name="BloodPressure" step="any" required>
+
+            <label>Skin Thickness:</label>
+            <input type="number" name="SkinThickness" step="any" required>
+
+            <label>Insulin:</label>
+            <input type="number" name="Insulin" step="any" required>
+
+            <label>BMI:</label>
+            <input type="number" name="BMI" step="any" required>
+
+            <label>Diabetes Pedigree Function:</label>
+            <input type="number" name="DiabetesPedigreeFunction" step="any" required>
+
+            <label>Age:</label>
+            <input type="number" name="Age" step="any" required>
+
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if result %}
+        <div class="result">
+            Prediction: <strong>{{ result }}</strong>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
