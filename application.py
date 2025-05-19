@@ -11,6 +11,7 @@ app = application
 model = pickle.load(open('models/diabetes.pkl','rb'))
 
 @app.route('/')
+
 def wel():
     return render_template('welcome.html')
 
@@ -51,3 +52,4 @@ if __name__ == '__main__':
     app.run(debug=True)
 
 
+    
